@@ -32,7 +32,7 @@ buttons.forEach((button) => {
     let equal = button.innerHTML;
 
     // когда на экране уже есть результат - сначала всё затираем
-    if (screen.innerHTML.includes(`=`)) {
+    if (screen.innerHTML.includes(`=`) && equal !== "C") {
       screen.innerHTML = null;
     }
 
