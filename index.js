@@ -30,6 +30,13 @@ buttons.forEach((button) => {
   // вешаем клик на каждую кнопку и выводим на экран
   button.addEventListener("click", () => {
     let equal = button.innerHTML;
+
+    // когда на экране уже есть результат - сначала всё затираем
+    if (screen.innerHTML.includes(`=`)) {
+      screen.innerHTML = null;
+    }
+
+    // добавляем один символ, если цифра, если оператор - то с пробелами
     if (equal === "=" || equal === "AC" || equal === "C") {
       return equal;
     } else if (
@@ -38,12 +45,20 @@ buttons.forEach((button) => {
       equal === "*" ||
       equal === "/"
     ) {
+      let string = screen.innerHTML;
+      let lastCharacter = string.charAt(string.length - 1);
+      if (lastCharacter == " ") {
+        alert("Некорректная операция!");
+        return;
+      }
       screen.append(` ${equal} `);
     } else {
       screen.append(`${equal}`);
     }
   });
 });
+
+// вывод результата действия
 
 const result = document.querySelector(".result");
 
@@ -62,9 +77,14 @@ erase.addEventListener("click", () => {
 // удаление последнего символа
 
 const eraseLast = document.querySelector(".last");
-console.log(eraseLast);
 
 eraseLast.addEventListener("click", () => {
   let string = screen.innerHTML;
-  screen.innerHTML = string.slice(0, -1);
+  let lastCharacter = string.charAt(string.length - 1);
+
+  if (lastCharacter == " ") {
+    screen.innerHTML = string.slice(0, -3);
+  } else {
+    screen.innerHTML = string.slice(0, -1);
+  }
 });

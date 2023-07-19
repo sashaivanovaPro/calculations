@@ -40,6 +40,9 @@
   border-radius: 2rem;
   font-size: 2.4rem;
   padding: 1rem;
+  white-space: pre-wrap; /* Allow line breaks */
+  word-wrap: break-word; /* Allow word wrapping */
+  overflow: scroll;
 }
 
 .grid {
