@@ -1,12 +1,18 @@
+@font-face {
+  font-family: "Inter";
+  src: url(./fonts/Inter.var.woff2);
+}
+
 * {
   box-sizing: border-box;
   font-size: 62.5%;
   color: white;
   background-color: #383836;
+  font-family: "Inter", Verdana, sans-serif;
 }
 
 .box {
-  width: 20vw;
+  width: 25vw;
   height: 40vh;
   min-width: 30rem;
   min-height: 52rem;
@@ -28,22 +34,34 @@
 
 .monitor {
   background-color: #787775;
+  color: #f2f2f2;
   width: 100%;
   height: 30%;
   border-radius: 2rem;
+  font-size: 2.4rem;
+  padding: 1rem;
 }
 
 .grid {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   gap: 4px;
   background-color: white;
 }
 
 .button {
   background-color: #d4d4d4;
-  border-radius: 20%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.button:nth-child(15) {
+  grid-row: span 2;
+  background-color: #383836;
 }
