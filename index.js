@@ -65,6 +65,10 @@ const result = document.querySelector(".result");
 result.addEventListener("click", () => {
   let string = screen.innerHTML;
   screen.append(` = ${eval(string)}`);
+  // if (string.includes("=")) {
+  //   alert("Некорректная операция!");
+  // }
+  console.log(string);
 });
 
 // сброс всего поля
