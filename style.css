@@ -57,7 +57,7 @@
   padding: 1rem;
   white-space: pre-wrap; /* Allow line breaks */
   word-wrap: break-word; /* Allow word wrapping */
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .grid {
@@ -97,4 +97,10 @@
 .button:nth-child(15):hover {
   background-blend-mode: lighten;
   color: #2e2f46;
+}
+
+@media (max-width: 768.98px) {
+  .monitor {
+    overflow: auto; /* Enable scrollbar on smaller screens */
+  }
 }
