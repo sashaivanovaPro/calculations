@@ -11,6 +11,20 @@
   font-family: "Inter", Verdana, sans-serif;
   font-weight: 300;
 }
+::-webkit-scrollbar {
+  width: 8px; /* ширина для вертикального скролла */
+  background-color: #143861;
+  border-radius: 50%;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #181c28;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 4px #313131;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #253861;
+}
 
 .box {
   display: flex;
@@ -57,7 +71,11 @@
   padding: 1rem;
   white-space: pre-wrap; /* Allow line breaks */
   word-wrap: break-word; /* Allow word wrapping */
-  overflow: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the track */
 }
 
 .grid {
